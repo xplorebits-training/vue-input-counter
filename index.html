@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Counter</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
     <style>
         body{
             min-width:50px;
@@ -40,17 +39,23 @@
 </head>
 <body>
 
-    <div style="min-height: 100px;height:300px;"></div>
-    <div id="text">Your full name</div>
-    <input id="content" onkeyup="counterFunction(this.value)" type="text">
-    <div id="counter"> count 0 </div>
+    <div id="root">
+        <div style="min-height: 100px;height:300px;"></div>
+        <div id="text">Your full name </div>
+        <input id="content" type="text" v-model="message">
+        <p id="counter"> count {{ message.length }} </p>
+    </div>
 
 <script>
 
-    function counterFunction(text){
-        let len = text.length;          
-        document.getElementById("counter").innerHTML = "count " + len;
-    }              
+    const app = new Vue({
+        el: "#root",
+        data () {
+            return {
+                message:""
+            }
+        }
+    })            
 
 </script>
 </body>
