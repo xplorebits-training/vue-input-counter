@@ -43,7 +43,7 @@
         <div style="min-height: 100px;height:300px;"></div>
         <div id="text">Your full name </div>
         <input id="content" type="text" v-model="message">
-        <p id="counter"> count {{ message.length }} </p>
+        <p id="counter"> count {{ count }} </p>
     </div>
 
 <script>
@@ -53,6 +53,11 @@
         data () {
             return {
                 message:""
+            }
+        },
+        computed: {
+            count(){
+                return this.message.length
             }
         }
     })            
