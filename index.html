@@ -7,50 +7,50 @@
     <title>Counter</title>
     <style>
         body{
-            min-width:100px;
+            min-width:50px;
             width: fit-content;
             display:block;
             margin:auto auto;
             font-family: Arial, Helvetica, sans-serif;
         }
-        .text{
-            font-size: 50px;
+        #text{
+            font-size: 25px;
             color:#8c8c8b; 
         }
         input{
-            width:1000px;
+            width:500px;
             border: #8c8c8b;
-            padding:30px;
+            padding:15px;
             margin: 10px 0px;
             border-color: #8c8c8b;
             background-color: #f2f2f2;
             outline-color: #8c8c8b;
-            border-radius: 20px;
+            border-radius: 10px;
 
-            font-size:80px;
+            font-size:40px;
         }
 
         #counter{
             display:flex;
-            font-size: 50px;
+            font-size: 25px;
             align-content:centre;
             justify-content: end;
         }
     </style>
 </head>
 <body>
-    <div style="height:550px"></div>
-    <div class="text" >Your full name</div>
-    <input type="text" onkeypress="counterFunction(this.value)">
-    <div id="counter">count 0</div>
+
+    <div style="min-height: 100px;height:300px;"></div>
+    <div id="text">Your full name</div>
+    <input id="content" onkeyup="counterFunction(this.value)" type="text">
+    <div id="counter"> count 0 </div>
 
 <script>
 
     function counterFunction(text){
-        let len = text.replace(/ /g,"")
-                         .length;          
-        document.getElementById("counter").innerHTML = "count " + len 
-    }                     
+        let len = text.length;          
+        document.getElementById("counter").innerHTML = "count " + len;
+    }              
 
 </script>
 </body>
